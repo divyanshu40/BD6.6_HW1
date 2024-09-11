@@ -19,7 +19,7 @@ app.get("/movies", async (req, res) => {
 });
 // Exercise 2: Retrieve Movie by ID
 app.get("/movies/details/:id", async (req, res) => {
-  let id = req.params.id;
+  let id = parseInt(req.params.id);
   try {
     let result = await getMovieById(id);
     if (! result) {
